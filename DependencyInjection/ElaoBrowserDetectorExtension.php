@@ -1,6 +1,6 @@
 <?php
 
-namespace Elao\BrowserDetectorBundle\DependencyInjection;
+namespace Elao\Bundle\BrowserDetectorBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -30,5 +30,8 @@ class ElaoBrowserDetectorExtension extends Extension
 
         $definition = $container->getDefinition('elao.browser_detector.browser_detector');
         $definition->addMethodCall('loadConfiguration', $config);
+
+        $container->setParameter('elao_browser_detector.redirect', $config['redirect']);
+
     }
 }

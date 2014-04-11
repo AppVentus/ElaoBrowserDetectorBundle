@@ -1,6 +1,6 @@
 <?php
 
-namespace Elao\BrowserDetectorBundle\DependencyInjection;
+namespace Elao\Bundle\BrowserDetectorBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -22,6 +22,7 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
+                ->scalarNode('redirect')->defaultNull()->end()
                 ->arrayNode('browsers')
                     ->children()
                         ->arrayNode('partially_compatible')
